@@ -29,7 +29,7 @@ form.addEventListener("submit", (e) => {
     launchLeaves();
 
     successMessage.textContent = "Registration successful!";
-
+    
     successMessage.classList.add("show");
 
     setTimeout(() => {
@@ -49,7 +49,9 @@ function createLeaf() {
   const leaf = document.createElement("div");
   leaf.className = "leaf";
   leaf.textContent = Math.random() > 0.5 ? "🍁" : "🍂";
-  leaf.style.left = Math.random() * 100 + "vw";
+  const leafWidth = 32; 
+  const maxLeft = window.innerWidth - leafWidth;
+  leaf.style.left = Math.random() * maxLeft + "px";
   const duration = 5 + Math.random() * 3;
   leaf.style.animationDuration = duration + "s";
   leavesContainer.appendChild(leaf);

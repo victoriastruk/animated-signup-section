@@ -3,10 +3,13 @@
    padding: 0;
    box-sizing: border-box;
 }
-
+body, html {
+  overflow-x: hidden;
+}
 body {
    font-family: "Segoe UI", sans-serif;
    background: linear-gradient(#f0e6d2, #a27b5c);
+   min-height: 100vh; 
 }
 
 .wrapper {
@@ -169,8 +172,11 @@ input.error {
    font-size: 2rem;
    animation: fall linear forwards;
    z-index: -1;
+   max-width: 2rem;
 }
-
+#leaves{
+   max-width: 100vw;
+}
 @keyframes fall {
    0% {
       transform: translateY(0) rotate(0deg);
@@ -281,7 +287,9 @@ input.error {
 
 .course-img {
    width: 100%;
-   height: 200px;
+   max-width: 100%;
+   height: auto;
+   display: block;
    overflow: hidden;
 }
 
@@ -305,7 +313,9 @@ input.error {
    .form-container {
       padding: 25px 20px;
    }
-
+   .courses {
+      position: relative;
+   }
    .course-img {
       height: 160px;
    }
@@ -331,11 +341,11 @@ input.error {
    }
 
    .courses {
-      margin-top: 140px;
       grid-template-columns: 1fr;
       gap: 15px;
-      padding: 0 10px;
-      max-width: 400px;
+      max-width: 100%; 
+      width: 100%;
+      position: relative;
    }
 
    .course-card p {
